@@ -1,4 +1,5 @@
 const ChainUtil = require('../chain-util');
+const { MINING_REWARD } = require('../config');
 
 class Transaction {
   constructor(){
@@ -33,9 +34,17 @@ class Transaction {
     return this;
   }
 
+  static transactionWithOutputs(senderWallet, outputs) {
+    /* Helper transaction function:
+      generates a transaction based on given outputs.
+      Outputs: a transaction object. */
+    const transaction = new this();
+    transaction.outputs.push(...outputs);
+    Transaction.signTransaction(transaction, senderWallet);
+    return transaction;
+  }
 
   static newTransaction(senderWallet, recipient, amount) {
-    const transaction = new this();
 
     // break the function if the account balance is less
     // than the transaction is sending
@@ -44,20 +53,22 @@ class Transaction {
       return;
     }
 
-    transaction.outputs.push(... [
-      {
-        amount: senderWallet.balance - amount,
-        address: senderWallet.publicKey
-      },
-      {
-        amount,
-        address: recipient
-      }
-    ])
+    return Transaction.transactionWithOutputs( senderWallet,
+      [{
+          amount: senderWallet.balance - amount,
+          address: senderWallet.publicKey
+        },
+        {
+          amount,
+          address: recipient
+      }]);
+  }
 
-    Transaction.signTransaction(transaction, senderWallet);
-
-    return transaction;
+  static rewardTransaction(minerWallet, blockchainWallet) {
+    // creates a transaction for the miner reward
+    return Transaction.transactionWithOutputs(blockchainWallet, [{
+      amount: MINING_REWARD, address: minerWallet.publicKey
+    }]);
   }
 
   static signTransaction(transaction, senderWallet) {

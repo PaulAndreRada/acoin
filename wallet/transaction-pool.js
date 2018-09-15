@@ -19,6 +19,7 @@ class TransactionPool {
       this.transactions.push(transaction);
     }
   }
+
   existingTransaction(address){
     // return a transaction from the pool that was created with this address
     return this.transactions.find(t => t.input.address === address);
@@ -46,6 +47,10 @@ class TransactionPool {
       // it passed
       return transaction;
     });
+  }
+
+  clear() {
+    this.transactions = [];
   }
 }
 

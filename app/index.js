@@ -57,7 +57,7 @@ app.get('/public-Key', (req, res) => {
   res.json({ publicKey: wallet.publicKey });
 });
 
-app.get('/calculate-balance', (req, res) => {
+app.get('/my-balance', (req, res) => {
   res.json({ walletBalance: wallet.calculateBalance(bc) });
 });
 

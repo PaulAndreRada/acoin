@@ -45,3 +45,5 @@ test every function created.
 To run Jest test suite use:
 
 ```npm run test```
+
+

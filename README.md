@@ -48,7 +48,8 @@ To run Jest test suite use:
 
 
 # TODO
-In order to make the generic Acoin into a product concept that spans beyond just another bitcoin clone, the're 3 different areas of interest that need to be worked on, in phases. Phase one will be focused on making the currency interface both easier to use (the user facing side of the currency) and more secure (the mining side). Task to do regarding phase one:
+In order to make the generic Acoin into a product concept that spans beyond just another bitcoin clone, there're two  different areas of interest that need to be worked on, in phases. Phase one will be focused on making the currency interface both easier to use (the user facing side of the currency) and more secure (the mining side). Task to do regarding both stages:
+
 ```
 Phase One: Making the standard cryptocurrency
   Interaction:

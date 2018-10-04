@@ -52,8 +52,9 @@ In order to make the generic Acoin into a product concept that spans beyond just
 
 ### Phase One: Making the standard cryptocurrency
 ```
+
   Interaction:
-    1. Create a mining Daemon for continuous mining, without the need  for a browser.
+    1. Assigned to PaulAndreRada: Create a mining Daemon for continuous mining.    
     2. Create a wallet CLI tool, include the mining deamon in it.
 
   Performance:
@@ -64,7 +65,7 @@ In order to make the generic Acoin into a product concept that spans beyond just
     1. Create a test suite with all of the penetration test possible.
 
   Possible:
-      1. Design and create a proof of stake mining system?
+      1. Design and create a proof of stake mining system.
 ```
 
 ### Phase Two: Making it a product (beyond just a cryptocurrency)

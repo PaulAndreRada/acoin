@@ -52,7 +52,6 @@ In order to make the generic Acoin into a product concept that spans beyond just
 
 ### Phase One: Making the standard cryptocurrency
 ```
-
   Interaction:
     1. Assigned to PaulAndreRada: Create a mining Daemon for continuous mining.    
     2. Create a wallet CLI tool, include the mining deamon in it.
